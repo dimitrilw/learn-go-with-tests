@@ -25,4 +25,14 @@ func TestHello(t *testing.T) {
 		want := "Hola, Elodie"
 		assertCorrectMessage(t, got, want)
 	})
+	t.Run("in Spanish (SpAnIsH) ...language is not case-sensitive", func(t *testing.T) {
+		got := Hello("Elodie", "SpAnIsH")
+		want := "Hola, Elodie"
+		assertCorrectMessage(t, got, want)
+	})
+	t.Run("in French", func(t *testing.T) {
+		got := Hello("Elodie", "French")
+		want := "Bonjour, Elodie"
+		assertCorrectMessage(t, got, want)
+	})
 }

@@ -6,6 +6,8 @@ import (
 )
 
 const (
+	french          string = "french"
+	frenchGreeting  string = "Bonjour"
 	spanish         string = "spanish"
 	spanishGreeting string = "Hola"
 	englishGreeting string = "Hello"
@@ -13,6 +15,8 @@ const (
 
 func getGreeting(language string) string {
 	switch strings.ToLower(language) {
+	case french:
+		return frenchGreeting
 	case spanish:
 		return spanishGreeting
 	default:

@@ -5,15 +5,12 @@
     ".git",                // Ignore the .git directory
   ],
   "cSpell.words": [
-    "exercism",
-    "gitter",
-    "roguelike",
+    "Dimitri",
+    "Langston-Wiebe",
     // go terms
     "benchmem",
     "gopls",
     "bools",
-    // package names
-    "termui",
   ],
   "gopls": {
     "experimentalWorkspaceModule": true,

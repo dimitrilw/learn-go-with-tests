@@ -11,6 +11,9 @@
     "benchmem",
     "gopls",
     "bools",
+    // foreign words
+    "Elodie",
+    "hola",
   ],
   "gopls": {
     "experimentalWorkspaceModule": true,

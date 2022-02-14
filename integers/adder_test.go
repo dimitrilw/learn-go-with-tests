@@ -1,6 +1,7 @@
 package integers
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -25,4 +26,9 @@ func TestAdder(t *testing.T) {
 		want := 4
 		assertCorrectMessage(t, got, want)
 	})
+}
+
+func ExampleAdd() {
+	fmt.Println(Add(8, 9))
+	// Output: 17
 }

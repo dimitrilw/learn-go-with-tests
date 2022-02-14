@@ -40,14 +40,19 @@ func TestHello(t *testing.T) {
 	})
 }
 
-func ExampleHello() {
+func ExampleHello_defaults() {
 	fmt.Println(Hello("", ""))
+	// Output: Hello, World
+}
+func ExampleHello_name() {
 	fmt.Println(Hello("Dimitri", ""))
+	// Output: Hello, Dimitri
+}
+func ExampleHello_language() {
 	fmt.Println(Hello("", "Spanish"))
+	// Output: Hola, World
+}
+func ExampleHello_name_and_language() {
 	fmt.Println(Hello("Dimitri", "Spanish"))
-	// Output:
-	// Hello, World
-	// Hello, Dimitri
-	// Hola, World
-	// Hola, Dimitri
+	// Output: Hola, Dimitri
 }

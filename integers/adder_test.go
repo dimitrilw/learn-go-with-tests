@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestAdder(t *testing.T) {
+func TestAdd(t *testing.T) {
 	assertCorrectMessage := func(t testing.TB, got, want int) {
 		t.Helper()
 		if got != want {
@@ -31,4 +31,10 @@ func TestAdder(t *testing.T) {
 func ExampleAdd() {
 	fmt.Println(Add(8, 9))
 	// Output: 17
+}
+
+func BenchmarkAdd(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Add(i, i)
+	}
 }

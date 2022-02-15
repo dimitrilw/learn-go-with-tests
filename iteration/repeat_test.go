@@ -13,20 +13,25 @@ func TestRepeat(t *testing.T) {
 		}
 	}
 
-	t.Run("repeats string", func(t *testing.T) {
-		got := Repeat("x")
+	t.Run("repeats string, small number", func(t *testing.T) {
+		got := Repeat("x", 5)
 		want := "xxxxx"
+		assertCorrectMessage(t, got, want)
+	})
+	t.Run("repeats string, large number", func(t *testing.T) {
+		got := Repeat("asdf", 20)
+		want := "asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf"
 		assertCorrectMessage(t, got, want)
 	})
 }
 
 func ExampleRepeat() {
-	fmt.Println(Repeat("x"))
+	fmt.Println(Repeat("x", 5))
 	// Output: xxxxx
 }
 
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Repeat("a")
+		Repeat("a", 5)
 	}
 }

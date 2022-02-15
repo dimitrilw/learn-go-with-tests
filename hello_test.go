@@ -56,3 +56,9 @@ func ExampleHello_name_and_language() {
 	fmt.Println(Hello("Dimitri", "Spanish"))
 	// Output: Hola, Dimitri
 }
+
+func BenchmarkHello(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Hello("", "")
+	}
+}

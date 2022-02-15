@@ -24,3 +24,9 @@ func ExampleRepeat() {
 	fmt.Println(Repeat("x"))
 	// Output: xxxxx
 }
+
+func BenchmarkRepeat(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Repeat("a")
+	}
+}

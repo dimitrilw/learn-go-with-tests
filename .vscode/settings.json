@@ -16,6 +16,7 @@
         "hola",
         // misc repo words
         "arraynslice",
+        "structmethodinterface",
     ],
     "gopls": {
         "experimentalWorkspaceModule": true,

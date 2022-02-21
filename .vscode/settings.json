@@ -1,21 +1,23 @@
 {
-  // cSpell info: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
-  "cSpell.ignorePaths": [
-    // repo files
-    ".git",                // Ignore the .git directory
-  ],
-  "cSpell.words": [
-    "Dimitri",
-    "Langston-Wiebe",
-    // go terms
-    "benchmem",
-    "gopls",
-    "bools",
-    // foreign words
-    "Elodie",
-    "hola",
-  ],
-  "gopls": {
-    "experimentalWorkspaceModule": true,
-  },
+    // cSpell info: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+    "cSpell.ignorePaths": [
+        // repo files
+        ".git",                // Ignore the .git directory
+    ],
+    "cSpell.words": [
+        "Dimitri",
+        "Langston-Wiebe",
+        // go terms
+        "benchmem",
+        "gopls",
+        "bools",
+        // foreign words
+        "Elodie",
+        "hola",
+        // misc repo words
+        "arraynslice",
+    ],
+    "gopls": {
+        "experimentalWorkspaceModule": true,
+    },
 }

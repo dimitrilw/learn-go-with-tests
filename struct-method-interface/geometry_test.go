@@ -4,19 +4,22 @@ import "testing"
 
 func TestPerimeter(t *testing.T) {
 	perimeterTests := []struct {
-		shape Shape
-		want  float64
+		name         string
+		shape        Shape
+		hasPerimeter float64
 	}{
-		{shape: Rectangle{10, 10}, want: 40.0},
-		{shape: Circle{10}, want: 62.83185307179586},
-		{shape: RightTriangle{12, 6}, want: 31.41640786499874},
+		{name: "Rectangle", shape: Rectangle{10, 10}, hasPerimeter: 40.0},
+		{name: "Circle", shape: Circle{10}, hasPerimeter: 62.83185307179586},
+		{name: "RightTriangle", shape: RightTriangle{12, 6}, hasPerimeter: 31.41640786499874},
 	}
 
 	for _, tt := range perimeterTests {
-		got := tt.shape.Perimeter()
-		if got != tt.want {
-			t.Errorf("got %g want %g", got, tt.want)
-		}
+		t.Run(tt.name, func(t *testing.T) {
+			got := tt.shape.Perimeter()
+			if got != tt.hasPerimeter {
+				t.Errorf("%#v got %g want %g", tt.shape, got, tt.hasPerimeter)
+			}
+		})
 	}
 }
 

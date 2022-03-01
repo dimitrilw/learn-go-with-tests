@@ -23,10 +23,15 @@ func (r Rectangle) Area() float64 {
 	return r.Height * r.Width
 }
 
-func Perimeter(r Rectangle) float64 {
+func (r Rectangle) Perimeter() float64 {
 	return 2 * (r.Height + r.Width)
 }
 
-func Area(r Rectangle) float64 {
-	return r.Height * r.Width
+type RightTriangle struct {
+	Base   float64
+	Height float64
+}
+
+func (rt RightTriangle) Area() float64 {
+	return 0.5 * rt.Base * rt.Height
 }

@@ -4,6 +4,7 @@ import "math"
 
 type Shape interface {
 	Area() float64
+	Perimeter() float64
 }
 
 type Circle struct {
@@ -12,6 +13,10 @@ type Circle struct {
 
 func (c Circle) Area() float64 {
 	return math.Pi * math.Pow(c.Radius, 2)
+}
+
+func (c Circle) Perimeter() float64 {
+	return math.Pi * 2 * c.Radius
 }
 
 type Rectangle struct {
@@ -34,4 +39,10 @@ type RightTriangle struct {
 
 func (rt RightTriangle) Area() float64 {
 	return 0.5 * rt.Base * rt.Height
+}
+
+func (rt RightTriangle) Perimeter() float64 {
+	// A squared + B squared = C squared ... C = sqrt(A squared + B squared)
+	c := math.Sqrt(math.Pow(rt.Base, 2) + math.Pow(rt.Height, 2))
+	return rt.Base + rt.Height + c
 }

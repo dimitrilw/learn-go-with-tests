@@ -3,12 +3,20 @@ package structmethodinterface
 import "testing"
 
 func TestPerimeter(t *testing.T) {
-	r := Rectangle{10.0, 10.0}
-	got := r.Perimeter()
-	want := 40.0
+	perimeterTests := []struct {
+		shape Shape
+		want  float64
+	}{
+		{Rectangle{10, 10}, 40.0},
+		{Circle{10}, 62.83185307179586},
+		{RightTriangle{12, 6}, 31.41640786499874},
+	}
 
-	if got != want {
-		t.Errorf("got %.2f want %.2f", got, want)
+	for _, tt := range perimeterTests {
+		got := tt.shape.Perimeter()
+		if got != tt.want {
+			t.Errorf("got %g want %g", got, tt.want)
+		}
 	}
 }
 

@@ -8,9 +8,7 @@ const (
 )
 
 func TestSearch(t *testing.T) {
-	d := Dictionary{
-		testKey: testString,
-	}
+	d := Dictionary{testKey: testString}
 
 	t.Run("known word", func(t *testing.T) {
 		got, _ := d.Search(testKey)
@@ -35,6 +33,21 @@ func TestAdd(t *testing.T) {
 		err := d.Add(testKey, "some other string")
 		assertError(t, err, ErrKeyExists, "NA(existing word test)")
 		assertDefinition(t, d, testKey, testString)
+	})
+}
+
+func TestUpdate(t *testing.T) {
+	t.Run("existing word", func(t *testing.T) {
+		d := Dictionary{testKey: testString}
+		newDefinition := "some new string"
+		err := d.Update(testKey, newDefinition)
+		assertError(t, err, nil, "NA(existing word test)")
+		assertDefinition(t, d, testKey, newDefinition)
+	})
+	t.Run("new word", func(t *testing.T) {
+		d := Dictionary{}
+		err := d.Update(testKey, testString)
+		assertError(t, err, ErrWordDoesNotExist, "NA(new word test)")
 	})
 }
 

@@ -11,23 +11,20 @@ insert_final_newline = true
 max_line_length = 100
 trim_trailing_whitespace = true
 
-[*.js]
-indent_size = 2
-
 [*.go]
 indent_style = tab
 indent_size = tab
 tab_size = 4
 
+[*.js]
+indent_size = 2
+
 [*.md]
-max_line_length = 0
+#max_line_length = 0
 trim_trailing_whitespace = false
 
 [*.py]
 max_line_length = 79
-
-[Justfile]
-indent_size = 4
 
 [COMMIT_EDITMSG]
 max_line_length = 0

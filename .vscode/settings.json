@@ -17,6 +17,7 @@
         // misc repo words
         "arraynslice",
         "structmethodinterface",
+        "pointersnerrors",
     ],
     "gopls": {
         "experimentalWorkspaceModule": true,

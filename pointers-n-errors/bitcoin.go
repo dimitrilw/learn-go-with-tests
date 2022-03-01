@@ -1,13 +1,28 @@
 package pointersnerrors
 
-type Wallet struct {
-	balance int
+import "fmt"
+
+type Stringer interface {
+	String() string
+}
+type Bitcoin int
+
+func (b Bitcoin) String() string {
+	// return "I'm a Bitcoin"
+	return fmt.Sprintf("%d BTC", b)
 }
 
-func (w Wallet) Balance() int {
+type Wallet struct {
+	balance Bitcoin
+}
+
+func (w *Wallet) Balance() Bitcoin {
 	return w.balance
 }
 
-func (w *Wallet) Deposit(amount int) {
+func (w *Wallet) Deposit(amount Bitcoin) {
 	w.balance += amount
+}
+func (w *Wallet) Withdraw(amount Bitcoin) {
+	w.balance -= amount
 }

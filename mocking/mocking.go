@@ -28,6 +28,8 @@ where it is actually sleeping for a second, like:
 func Countdown(out io.Writer, s Sleeper) {
 	for i := defaultCountdownStart; i > 0; i-- {
 		fmt.Fprintln(out, i)
+	}
+	for i := defaultCountdownStart; i > 0; i-- {
 		s.Sleep()
 	}
 	fmt.Fprint(out, finalCountdownOutput)

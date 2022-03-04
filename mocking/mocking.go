@@ -15,8 +15,8 @@ type Sleeper interface {
 /* the following struct & method are for making a non-mocked version of function
 where it is actually sleeping for a second, like:
 	func main() {
-		s := &DefaultSleeper{}
-		Countdown(os.Stdout, s)
+		s := &DefaultSleeper{} // ... or this? DefaultSleeper{}
+		Countdown(os.Stdout, s) // ........... *s
 	}
 */
 // type DefaultSleeper struct {}

@@ -10,9 +10,9 @@ import (
 )
 
 func TestCountdown(t *testing.T) {
-	t.Run("with mocked Sleep", func(t *testing.T) {
+	t.Run("prints 3... to Go!", func(t *testing.T) {
 		b := &bytes.Buffer{}
-		s := &SpySleeper{}
+		s := &SpyCountdownOperations{}
 		Countdown(b, s)
 
 		got := b.String()
@@ -25,10 +25,6 @@ func TestCountdown(t *testing.T) {
 
 		if got != want {
 			t.Errorf("got %q want %q", got, want)
-		}
-		numCalls := 3
-		if s.Calls != numCalls {
-			t.Errorf("incorrect number of Sleep calls, got %d want %d", s.Calls, numCalls)
 		}
 	})
 

@@ -3,6 +3,7 @@ package mocking
 import (
 	"fmt"
 	"io"
+	"time"
 )
 
 const finalCountdownOutput = "Go!"
@@ -12,18 +13,22 @@ type Sleeper interface {
 	Sleep()
 }
 
+type ConfigurableSleeper struct {
+	duration time.Duration
+	sleep    func(time.Duration)
+}
+
+func (c *ConfigurableSleeper) Sleep() {
+	c.sleep(c.duration)
+}
+
 /* the following struct & method are for making a non-mocked version of function
 where it is actually sleeping for a second, like:
 	func main() {
-		s := &DefaultSleeper{} // ... or this? DefaultSleeper{}
-		Countdown(os.Stdout, s) // ........... *s
+		s := &ConfigurableSleeper{1 * time.Second, time.Sleep} // ... or this? ConfigurableSleeper{}
+		Countdown(os.Stdout, s) // .................................. *s
 	}
 */
-// type DefaultSleeper struct {}
-
-// func (d *DefaultSleeper) Sleep() {
-// 	time.Sleep(1 * time.Second)
-// }
 
 func Countdown(out io.Writer, s Sleeper) {
 	for i := defaultCountdownStart; i > 0; i-- {

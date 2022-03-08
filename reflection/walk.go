@@ -28,17 +28,21 @@ func walk(x interface{}, fn func(input string)) {
 	switch val.Kind() {
 	case reflect.String:
 		fn(val.String())
-	case reflect.Struct:
-		walkElements{
-			numElements:   val.NumField(),
-			getElementVia: val.Field,
-			walkFn:        fn,
-		}.walkThem()
 	case reflect.Slice, reflect.Array:
 		walkElements{
 			numElements:   val.Len(),
 			getElementVia: val.Index,
 			walkFn:        fn,
 		}.walkThem()
+	case reflect.Struct:
+		walkElements{
+			numElements:   val.NumField(),
+			getElementVia: val.Field,
+			walkFn:        fn,
+		}.walkThem()
+	case reflect.Map:
+		for _, key := range val.MapKeys() {
+			walk(val.MapIndex(key).Interface(), fn)
+		}
 	}
 }

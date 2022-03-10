@@ -1,6 +1,9 @@
 package syncthreads
 
+import "sync"
+
 type Counter struct {
+	lock  sync.Mutex
 	value int
 }
 
@@ -9,5 +12,11 @@ func (c *Counter) Value() int {
 }
 
 func (c *Counter) Inc() {
+	c.lock.Lock()
+	defer c.lock.Unlock()
 	c.value++
+}
+
+func NewCounter() *Counter {
+	return &Counter{}
 }

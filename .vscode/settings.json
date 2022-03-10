@@ -10,6 +10,7 @@
         // go terms
         "benchmem",
         "gopls",
+        "errcheck",
         "bools",
         // foreign words
         "Elodie",

@@ -6,12 +6,14 @@ import (
 	"testing"
 )
 
-// func assertEqual(t testing.TB, got, want interface{}) {
-// 	t.Helper()
-// 	if got != want {
-// 		t.Errorf("got %v want %v", got, want)
-// 	}
-// }
+func TestVoid(t *testing.T) {
+	t.Run("Is a void", func(t *testing.T) {
+		var v interface{} = Void{}
+		_, got := v.(Void)
+		want := true
+		assertEqual(t, got, want)
+	})
+}
 
 func TestMin(t *testing.T) {
 	t.Run("No arg", func(t *testing.T) {
@@ -56,6 +58,13 @@ func TestMax(t *testing.T) {
 // =============================================================================
 // Examples
 
+func ExampleVoid() {
+	var v interface{} = Void{}
+	_, ok := v.(Void)
+	fmt.Println(ok)
+	// Output: true
+}
+
 func ExampleMin() {
 	fmt.Println(Min(1, 2, 3))
 	// Output: 1
@@ -68,6 +77,12 @@ func ExampleMax() {
 
 // =============================================================================
 // Benchmarks
+
+func BenchmarkVoid(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = Void{}
+	}
+}
 
 func BenchmarkMin(b *testing.B) {
 	nums := []int{}

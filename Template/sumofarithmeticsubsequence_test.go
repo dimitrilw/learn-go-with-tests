@@ -5,17 +5,7 @@ import (
 	"testing"
 )
 
-// func assertEqual(t testing.TB, got, want interface{}) {
-// 	t.Helper()
-// 	if got != want {
-// 		t.Errorf("got %v want %v", got, want)
-// 	}
-// }
-
-// =============================================================================
-// Min
-
-func TestArithmeticSubSequence(t *testing.T) {
+func TestSumofArithmeticSubSequence(t *testing.T) {
 	t.Run("same number for args", func(t *testing.T) {
 		got := SumOfArithmeticSubSequence(1, 1)
 		want := 1

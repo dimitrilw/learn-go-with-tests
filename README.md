@@ -2,20 +2,6 @@
 
 My repo for working through the book: [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests)
 
-...and it has morphed into a place for me to learn Go in general and store snippets of code.
-
-## todo
-
-- rename this repo to `go-magic` or something 
-    - move all of the root "learn go with tests" stuff into a sub-dir
-    - rename & push to github
-- learn the [dedent package](https://github.com/lithammer/dedent/blob/master/dedent.go)
-- experiment with [fyne](https://fyne.io/) for UI
-- get better with logging
-    - learn [Uber's zap logging](https://github.com/uber-go/zap)
-    - log contexts, like in [this blog post](https://blog.gopheracademy.com/advent-2016/context-logging/)
-- research code profiling, like with `pprof` and other tools
-
 ## tips
 
 - run tests inside VS-Code via the testing tab

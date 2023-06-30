@@ -14,8 +14,7 @@
 # modern version of git and editors capable of LF line endings.
 
 *.go            -text diff=golang
-#*.go            text diff=golang
-go.mod          text diff=golang
+go.mod           text diff=golang
 
 # ==============================================================================
 # Python

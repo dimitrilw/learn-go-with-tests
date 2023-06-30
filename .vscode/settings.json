@@ -13,12 +13,14 @@
         "errcheck",
         "staticcheck",
         "pprof",
-        "fyne",
         "bools",
+        // go packages
+        "dedent",
+        "fyne",
         // foreign words
         "Elodie",
         "hola",
-	    "waat",
+        "waat",
         "furhurterwe",
         "geds",
         // misc repo words
@@ -26,7 +28,9 @@
         "structmethodinterface",
         "pointersnerrors",
     ],
-    "gopls": {
-        "experimentalWorkspaceModule": true,
-    },
+
+    // DEPRECATED ...why did I have this turned on? What have I lost from deprecation?
+    // "gopls": {
+    //     "experimentalWorkspaceModule": true,
+    // },
 }

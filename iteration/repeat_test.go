@@ -20,6 +20,7 @@ func TestRepeat(t *testing.T) {
 	})
 	t.Run("repeats string, large number", func(t *testing.T) {
 		got := Repeat("asdf", 20)
+		// cSpell:disable-next-line
 		want := "asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf"
 		assertCorrectMessage(t, got, want)
 	})

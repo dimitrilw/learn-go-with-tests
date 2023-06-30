@@ -2,22 +2,26 @@
 
 My repo for working through the book: [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests)
 
+...and it has morphed into a place for me to learn Go in general and store snippets of code.
+
 ## todo
 
+- rename this repo to `go-magic` or something 
+    - move all of the root "learn go with tests" stuff into a sub-dir
+    - rename & push to github
 - learn the [dedent package](https://github.com/lithammer/dedent/blob/master/dedent.go)
 - experiment with [fyne](https://fyne.io/) for UI
-- learn [Uber's zap logging](https://github.com/uber-go/zap)
+- get better with logging
+    - learn [Uber's zap logging](https://github.com/uber-go/zap)
+    - log contexts, like in [this blog post](https://blog.gopheracademy.com/advent-2016/context-logging/)
 - research code profiling, like with `pprof` and other tools
 
 ## tips
 
-- lint via `go-staticcheck`, such as:
-    `fd -td -x go-staticcheck`
-- benchmark all packages across all sub-dirs via `go test -bench=.`, such as:
-    `fd -td -x go test -bench=.`
-- error check all packages across all sub-dirs via `errcheck`, such as:
-    `fd -td -x errcheck .`
-- check for race conditions via `go test -race`, such as:
-    `fd -td -x go test -race`
-- check for unsafe parallel routines (and maybe more?) via `go vet`, such as:
-    `fd -td -x go vet`
+- run tests inside VS-Code via the testing tab
+- run go tool commands across all directories via `fd -td -x GO TOOL COMMAND`, such as: `fd -td -x go fmt`
+- `go-staticcheck` = linting
+- `go test -bench=.` = benchmark
+- `errcheck` = error check
+- `go test -race` = check for race conditions
+- `go vet` = check for unsafe parallel routines (and maybe more?)

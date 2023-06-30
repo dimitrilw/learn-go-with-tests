@@ -2,8 +2,13 @@
 
 My repo for working through the book: [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests)
 
+...and it has morphed into a place for me to learn Go in general and store snippets of code.
+
 ## todo
 
+- rename this repo to `go-magic` or something 
+    - move all of the root "learn go with tests" stuff into a sub-dir
+    - rename & push to github
 - learn the [dedent package](https://github.com/lithammer/dedent/blob/master/dedent.go)
 - experiment with [fyne](https://fyne.io/) for UI
 - get better with logging
@@ -13,6 +18,7 @@ My repo for working through the book: [Learn Go with Tests](https://quii.gitbook
 
 ## tips
 
+- run tests inside VS-Code via the testing tab
 - run go tool commands across all directories via `fd -td -x GO TOOL COMMAND`, such as: `fd -td -x go fmt`
 - `go-staticcheck` = linting
 - `go test -bench=.` = benchmark
